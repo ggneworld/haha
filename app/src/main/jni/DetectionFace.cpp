@@ -532,8 +532,7 @@ int Java_com_smartcamera_core_CameraManager_nativeIsEnableTracking(JNIEnv *env,
 	return enableTracking;
 }
 
-int Java_com_smartcamera_core_CameraManager_nativeSetTrackingMode(JNIEnv *env,
-		jobject obj, jint mode) {
+int Java_com_smartcamera_core_CameraManager_nativeSetTrackingMode(JNIEnv *env, jobject obj, jint mode) {
 	for (int i = 0; i < MAX_TRACKING_OBJ_SIZE; i++) {
 		trackObjs[i].flag = false;
 	}
@@ -544,6 +543,7 @@ int Java_com_smartcamera_core_CameraManager_nativeSetTrackingMode(JNIEnv *env,
 	} else if (mode == 2) {
 		trackingCount = MAX_TRACKING_OBJ_SIZE;
 	}
+	return 0;
 }
 
 int Java_com_smartcamera_core_CameraManager_nativeEnableAsyncDetect(JNIEnv *env,
